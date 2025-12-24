@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<title>Faqat Mubina Uchun 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="author" content="Temurbek">
+<meta name="description" content="Mubina uchun maxsus manga uslubidagi romantik sahifa. Created by Temurbek">
+
+<!--
+====================================
+  Created by: Temurbek
+  Year: 2025
+====================================
+-->
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #ffd6e8, #fff0f5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Comic Sans MS', cursive;
+        overflow: hidden;
+    }
+
+    .card {
+        background: white;
+        padding: 30px;
+        border-radius: 25px;
+        text-align: center;
+        width: 330px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        animation: pop 1s ease;
+        position: relative;
+        z-index: 2;
+    }
+
+    @keyframes pop {
+        0% { transform: scale(0); }
+        100% { transform: scale(1); }
+    }
+
+    h1 {
+        color: #ff4d88;
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: #444;
+        line-height: 1.6;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 30px;
+        background: #ff4d88;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #ff1f6a;
+        transform: scale(1.05);
+    }
+
+    .love-text {
+        margin-top: 15px;
+        color: #ff4d88;
+        font-weight: bold;
+        display: none;
+        animation: fade 1s ease;
+    }
+
+    @keyframes fade {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    .heart {
+        position: absolute;
+        color: pink;
+        font-size: 20px;
+        animation: fly 4s linear infinite;
+        opacity: 0.8;
+        pointer-events: none;
+    }
+
+    @keyframes fly {
+        0% {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-600px) scale(1.5);
+            opacity: 0;
+        }
+    }
+
+    .footer {
+        margin-top: 20px;
+        font-size: 12px;
+        opacity: 0.6;
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h1>Hey Mubina 💕</h1>
+
+    <p id="introText">
+        Mubina, bu sahifa oddiy emas…<br>
+        Bu — aynan sen uchun yozilgan ✨
+    </p>
+
+    <button onclick="showLove()">Bos 💌</button>
+
+    <div id="loveText" class="love-text">
+        Mubina, seni ko‘rganimda dunyo jim bo‘lib qoladi 💖
+    </div>
+
+    <div class="footer">
+        © 2025 • Created by <b>Temurbek</b>
+    </div>
+</div>
+
+<script>
+    const name = "Mubina";
+
+    // Sahifa ochilganda sarlavhani yumshoq chiqarish
+    window.onload = () => {
+        document.querySelector("h1").innerText = "Hey " + name + " 💕";
+        document.getElementById("introText").innerHTML =
+            name + ", bu sahifa oddiy emas…<br>Bu — aynan sen uchun yozilgan ✨";
+    };
+
+    function showLove() {
+        document.getElementById("loveText").style.display = "block";
+
+        for (let i = 0; i < 25; i++) {
+            createHeart();
+        }
+    }
+
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "💗";
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.bottom = "-30px";
+        heart.style.fontSize = (15 + Math.random() * 25) + "px";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 4000);
+    }
+</script>
+
+</body>
+</html>
